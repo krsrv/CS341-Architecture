@@ -1,0 +1,53 @@
+---Dinero IV cache simulator, version 7
+---Written by Jan Edler and Mark D. Hill
+---Copyright (C) 1997 NEC Research Institute, Inc. and Mark D. Hill.
+---All rights reserved.
+---Copyright (C) 1985, 1989 Mark D. Hill.  All rights reserved.
+---See -copyright option for details
+
+---Summary of options (-help option gives usage information).
+
+-l1-usize 16384
+-l1-ubsize 16
+-l1-usbsize 16
+-l1-uassoc 1
+-l1-urepl l
+-l1-ufetch d
+-l1-uwalloc a
+-l1-uwback a
+-l1-uccc
+-skipcount 0
+-flushcount 0
+-maxcount 500000
+-stat-interval 0
+-informat d
+-on-trigger 0x0
+-off-trigger 0x0
+
+---Simulation begins.
+---Maximum address count exceeded.
+---Simulation complete.
+l1-ucache
+ Metrics		      Total	      Instrn	       Data	       Read	      Write	       Misc
+ -----------------	      ------	      ------	      ------	      ------	      ------	      ------
+ Demand Fetches		      500000	      372934	      127066	       82310	       44756	           0
+  Fraction of total	      1.0000	      0.7459	      0.2541	      0.1646	      0.0895	      0.0000
+
+ Demand Misses		       31732	       21444	       10288	        6286	        4002	           0
+  Demand miss rate	      0.0635	      0.0575	      0.0810	      0.0764	      0.0894	      0.0000
+   Compulsory misses	        7449	        5015	        2434	         878	        1556	           0
+   Capacity misses	        7621	        5244	        2377	        1859	         518	           0
+   Conflict misses	       16662	       11185	        5477	        3549	        1928	           0
+   Compulsory fraction	      0.2347	      0.2339	      0.2366	      0.1397	      0.3888	      0.0000
+   Capacity fraction	      0.2402	      0.2445	      0.2310	      0.2957	      0.1294	      0.0000
+   Conflict fraction	      0.5251	      0.5216	      0.5324	      0.5646	      0.4818	      0.0000
+
+ Multi-block refs                 0
+ Bytes From Memory	      507712
+ ( / Demand Fetches)	      1.0154
+ Bytes To Memory	       82368
+ ( / Demand Writes)	      1.8404
+ Total Bytes r/w Mem	      590080
+ ( / Demand Fetches)	      1.1802
+
+---Execution complete.

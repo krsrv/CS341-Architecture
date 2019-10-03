@@ -1,0 +1,87 @@
+(__TEXT,__text) section
+_main:
+0000000100000dd0	pushq	%rbp
+0000000100000dd1	movq	%rsp, %rbp
+0000000100000dd4	subq	$0x2080, %rsp
+0000000100000ddb	leaq	-0x1010(%rbp), %rax
+0000000100000de2	xorl	%esi, %esi
+0000000100000de4	movl	$0x1000, %ecx
+0000000100000de9	movl	%ecx, %edx
+0000000100000deb	leaq	-0x2010(%rbp), %rdi
+0000000100000df2	movq	0x207(%rip), %r8 ## literal pool symbol address: ___stack_chk_guard
+0000000100000df9	movq	(%r8), %r8
+0000000100000dfc	movq	%r8, -0x8(%rbp)
+0000000100000e00	movl	$0x0, -0x2024(%rbp)
+0000000100000e0a	movq	%rax, -0x2060(%rbp)
+0000000100000e11	callq	0x100000f70 ## symbol stub for: _memset
+0000000100000e16	movq	-0x2060(%rbp), %rax
+0000000100000e1d	movq	%rax, -0x2040(%rbp)
+0000000100000e24	movl	$0x0, -0x202c(%rbp)
+0000000100000e2e	cmpl	$0x40, -0x202c(%rbp)
+0000000100000e35	jge	0x100000eea
+0000000100000e3b	leaq	-0x2034(%rbp), %rax
+0000000100000e42	movq	%rax, -0x2020(%rbp)
+0000000100000e49	movq	-0x2020(%rbp), %rcx
+0000000100000e50	movq	%rax, -0x2068(%rbp)
+0000000100000e57	movq	%rcx, -0x2070(%rbp)
+
+
+
+
+0000000100000e5e	rdtscp
+0000000100000e61	movq	-0x2070(%rbp), %rsi
+0000000100000e68	movl	%ecx, (%rsi)
+0000000100000e6a	shlq	$0x20, %rdx
+0000000100000e6e	orq	%rdx, %rax
+0000000100000e71	movq	%rax, -0x2048(%rbp)
+0000000100000e78	movq	-0x2068(%rbp), %rax
+0000000100000e7f	movq	%rax, -0x2018(%rbp)
+0000000100000e86	movq	-0x2018(%rbp), %rdx
+0000000100000e8d	movq	%rdx, -0x2078(%rbp)
+
+
+
+
+0000000100000e94	rdtscp
+0000000100000e97	movq	-0x2078(%rbp), %rdi
+0000000100000e9e	movl	%ecx, (%rdi)
+0000000100000ea0	shlq	$0x20, %rdx
+0000000100000ea4	orq	%rdx, %rax
+0000000100000ea7	subq	-0x2048(%rbp), %rax
+0000000100000eae	movq	%rax, -0x2050(%rbp)
+0000000100000eb5	movq	-0x2050(%rbp), %rax
+0000000100000ebc	movl	%eax, %ecx
+0000000100000ebe	movslq	-0x202c(%rbp), %rax
+0000000100000ec5	movl	%ecx, -0x2010(%rbp,%rax,4)
+0000000100000ecc	movq	-0x2040(%rbp), %rax
+0000000100000ed3	clflush	(%rax)
+0000000100000ed6	movl	-0x202c(%rbp), %eax
+0000000100000edc	addl	$0x1, %eax
+0000000100000edf	movl	%eax, -0x202c(%rbp)
+0000000100000ee5	jmp	0x100000e2e
+0000000100000eea	movl	$0x0, -0x2054(%rbp)
+0000000100000ef4	cmpl	$0x40, -0x2054(%rbp)
+0000000100000efb	jge	0x100000f42
+0000000100000f01	leaq	0xa2(%rip), %rdi ## literal pool for: "%d\t->\t%d\n"
+0000000100000f08	movl	-0x2054(%rbp), %eax
+0000000100000f0e	addl	$0x0, %eax
+0000000100000f11	movslq	-0x2054(%rbp), %rcx
+0000000100000f18	movl	-0x2010(%rbp,%rcx,4), %edx
+0000000100000f1f	movl	%eax, %esi
+0000000100000f21	movb	$0x0, %al
+0000000100000f23	callq	0x100000f76 ## symbol stub for: _printf
+0000000100000f28	movl	%eax, -0x207c(%rbp)
+0000000100000f2e	movl	-0x2054(%rbp), %eax
+0000000100000f34	addl	$0x1, %eax
+0000000100000f37	movl	%eax, -0x2054(%rbp)
+0000000100000f3d	jmp	0x100000ef4
+0000000100000f42	movq	0xb7(%rip), %rax ## literal pool symbol address: ___stack_chk_guard
+0000000100000f49	movq	(%rax), %rax
+0000000100000f4c	movq	-0x8(%rbp), %rcx
+0000000100000f50	cmpq	%rcx, %rax
+0000000100000f53	jne	0x100000f64
+0000000100000f59	xorl	%eax, %eax
+0000000100000f5b	addq	$0x2080, %rsp
+0000000100000f62	popq	%rbp
+0000000100000f63	retq
+0000000100000f64	callq	0x100000f6a ## symbol stub for: ___stack_chk_fail

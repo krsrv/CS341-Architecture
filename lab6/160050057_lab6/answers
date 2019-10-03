@@ -1,0 +1,19 @@
+Branch delay slot is enabled
+
+1.
+
+a) Number of cycles = 38
+   Stalls :	RAW - 10
+		Structural - 1
+		Others - 0
+
+b) Numberof registers - 14 (f0-f11, r0, r1)
+
+2.
+
+a) Number of cycles = 1327
+   Stalls :	RAW - 10
+		Structural - 187
+		Others - 0
+
+b) Number of registers -  15 (f0-f7, f12-f15, r0-r2)
